@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قلب</title>
+    <link rel="stylesheet" href="first.css">
+</head>
+<body>
+
+    <div id="splash" class="splash-screen">
+        <div class="splash-message">
+            <h1> 💖لما تريد تتغزل بحبيبتك بس انت مبرمج</h1>
+            <p>من حبيبك احمد  </p>
+        </div>
+    </div>
+
+    <div id="main-content" class="container" style="display: none;">
+        <audio id="myAudio" loop>
+            <source src="code/ش.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="heart">
+            <span class="text">أحبكِ</span>
+        </div>
+        <p class="message">💖بحبك يا قطتي</p>
+
+        <div class="play-button" onclick="togglePlay()">
+            <span class="play-text">🎵</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.getElementById("splash").style.opacity = 0;
+                setTimeout(function() {
+                    document.getElementById("splash").style.display = "none";
+                    document.getElementById("main-content").style.display = "block";
+                }, 1000);
+            }, 3000);
+        });
+
+        var audio = document.getElementById("myAudio");
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>
